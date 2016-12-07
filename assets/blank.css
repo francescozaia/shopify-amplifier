@@ -116,3 +116,210 @@ div#cart {
 	margin: 0px;
 }
 */
+
+/* Font Setting */
+@-ms-viewport {
+    width: device-width;
+}
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ */
+header,
+nav {
+    display: block;
+}
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+    font-size: 100%;
+    text-decoration: none;
+    margin: 0;
+    background: transparent;
+    color: #fff;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/*
+  If you want to overwrite the default tap-highlight-color
+  you can define one for your project but keep in mind to make it
+an RGBA color with a little transparency so the text won't
+  become unreadable after the tap.
+  This also has an effect on old Android (2.3). I know because
+  I still own one of those.
+*/
+a:link {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, .4);
+}
+
+h1 {
+    font-size: 1em;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto; /* for safety reasons */
+}
+
+/** Helpers **/
+/** Invisible but readable for screenreaders
+ * This solution has helped me best at hiding contents in favor of images and keep text accessible.
+*/
+.sr {
+    display: block;
+    text-indent: 120%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: .008em;
+    width: .008em;
+}
+
+/* Mobile First Styling */
+
+/**
+ * Header
+ */
+.h {
+    z-index: 3;
+    width: 38.2%;
+    margin-left: 5.5%;
+    padding: 1.25em 0;
+}
+
+/** Navigation Toggle Button and Closing Button **/
+.nb,
+.nc {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    position: absolute;
+    right: 1.5em;
+    top: 1.75em;
+    z-index: 4;
+
+    padding: .4em;
+
+    color: #fff;
+    background: #ccc;
+    border-radius: .25em;
+    border: .08em solid rgba(0,0,0,.25);
+    box-shadow: 0 .08em .08em rgba(0, 0, 0, .25);
+}
+
+.nb:active,
+.nc:active {
+    background: #999;
+    box-shadow: 0 .08em .08em rgba(255, 255, 255, .65), 0 -.08em .08em rgba(255, 255, 255, .65);
+}
+
+/* Normally the closing button is hidden */
+.nc {
+    display: none;
+    z-index: 3;
+}
+
+/* and as soon as the nav is targeted we reveal it and place it on top of the menu button */
+.nav:target + .nc {
+    display: block;
+    z-index: 5;
+    padding: .38em 1.65em;
+}
+
+/** Mobile Navigation Styling
+ * The container is at 0 height at first
+ * when receiving target everything becomes
+ * visible by giving it height and display: block
+ */
+.nav {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0px;
+    max-height: 0px;
+    padding-top: 0px;
+    opacity: 0;
+    transition: none ;
+}
+
+.nav ul {
+    display: none;
+    margin: 0;
+}
+
+.nav li {
+    line-height: 1.65;
+    padding: 0 .3275em;
+}
+
+.nav a {
+    display: block;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+
+/** When clicking the Menu button the nav receives :target
+ */
+.nav:target {
+    position: relative;
+    top: -10em;
+    z-index: 2;
+    padding-top: 10em;
+    margin-bottom: -8em;
+    height: 100%;
+    max-height: 62.5em;
+    opacity: 1;
+    transition:
+            opacity .4s ease-out,
+            max-height .4s ease-out;
+}
+
+.nav:target ul {
+    display: block;
+    margin: 1em 5.5%;
+}
+
+.nav:target a {
+    width: auto;
+    height: 100%;
+    padding: .3875em 0 .3875em .5475em;
+    border-bottom: 0.08em solid rgba(0, 0, 0, 0.25);
+}
+
+.nav:target a:hover,
+.nav:target a:focus {
+    background-color: #aaa;
+}
+
+.nav:target a:active {
+    color: #999;
+    background-color: #fff;
+}
+
+/** Main Content Area
+ */
+.m {
+    background: #fff;
+    box-shadow: 0 0 .625em .08em rgba(0, 0, 0, .05);
+    padding: 1.75em 5.5% 2em;
+}

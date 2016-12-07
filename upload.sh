@@ -1,0 +1,1 @@
+theme upload -e=development $1
