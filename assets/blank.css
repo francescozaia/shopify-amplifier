@@ -1,8 +1,5 @@
-/* @override http://localhost:3232/files/shops/random_number/assets/blank.css */
-
 /* Global Elements
--------------------------------------------------------------- */
-
+--------------------------------------------------------------
 body, input, textarea {
     font: 15px Georgia,serif;
     line-height:22px;
@@ -53,16 +50,17 @@ a:hover {
     color: #FF4B33;
 }
 
-/* Wrapper */
-
+/* Wrapper
 div#wrapper {
 }
+*/
 
-/* Header */
+/* Header
 div.header {
 }
+*/
 
-/* Navigation */
+/* Navigation
 div #top-nav {
 	border-bottom:1px solid #CCCCCC;
 	font-size:13px;
@@ -94,9 +92,9 @@ div #top-nav li.menu-item a {
 	text-decoration: none;
 	text-align: center;
 }
+*/
 
-/* Cart */
-
+/* Cart
 div#cart {
 	width: 200px;
 	float: right;
@@ -117,3 +115,4 @@ div#cart {
 	padding: 0px;
 	margin: 0px;
 }
+*/
